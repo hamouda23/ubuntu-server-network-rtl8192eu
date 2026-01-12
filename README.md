@@ -1,45 +1,80 @@
-# Mon Serveur Ubuntu sur HP Z800 Workstation
+# HP Z800 - Serveur Deep Learning & NAS
 
-## Objectif
-Transformer une vieille station de travail HP Z800 en serveur Ubuntu fonctionnel avec :
-- Connexion Wi-Fi stable (adaptateur USB Realtek RTL8192EU)
-- Accès distant via SSH
-- Headless (sans écran/clavier/souris après configuration)
+Transformation d'une HP Z800 Workstation (2009) en serveur Ubuntu pour Deep Learning et stockage NAS.
 
-## Matériel
-- **Modèle** : HP Z800 Workstation (2009-2010)
-- **CPU** : 2 × Intel Xeon E5640 @ 2.67 GHz (8 cœurs / 8 threads)
-- **RAM** : ~12 GB DDR3 ECC (utilisable ~4 GB)
-- **GPU** : NVIDIA Quadro P4000 (8 GB)
-- **Wi-Fi** : Adaptateur USB Realtek RTL8192EU (ID 0bda:818b)
-- **OS** : Ubuntu Server 22.04 LTS (noyau 6.8.0-40-generic HWE)
+## 🎯 Objectifs du projet
 
-## Parcours et problèmes rencontrés
-1. Interfaces Ethernet multiples
-   
-2. **Wi-Fi non détecté**  
-   Le pilote intégré (`rtl8xxxu`) ne fonctionnait pas → pas d'interface.
+- ✅ **Serveur headless** : Accès distant SSH, sans écran/clavier
+- ✅ **Wi-Fi stable** : Adaptateur USB Realtek RTL8192EU fonctionnel
+- 🚧 **Deep Learning** : Utilisation du GPU NVIDIA Quadro P4000 pour l'entraînement de modèles
+- ⏳ **NAS** : Serveur de stockage réseau
+- ⏳ **Disponibilité 24/7** : Monitoring et reconnexion automatique
 
-3. **Tentatives avec pilote tiers**  
-   - Installation du driver Mange (`rtl8192eu-linux-driver`) via DKMS.
-   - Compilation réussie, mais interface absente ou instable (NO-CARRIER, timeout DHCP).
+## 🔧 Matériel
 
-4. **Solutions testées**  
-   - Blacklist `rtl8xxxu`
-   - Désactivation power management : `rtw_power_mgnt=0 rtw_enusbss=0`
-   - Firmware Realtek installé (`firmware-realtek`)
-   - Plusieurs forks testés (Mange → clnhub)
+| Composant | Spécifications |
+|-----------|---------------|
+| **Modèle** | HP Z800 Workstation (2009-2010) |
+| **CPU** | 2× Intel Xeon E5640 @ 2.67 GHz (8 cœurs, 16 threads) |
+| **RAM** | 12 GB DDR3 ECC (actuellement ~4 GB utilisables) |
+| **GPU** | NVIDIA Quadro P4000 (8 GB GDDR5, 1792 CUDA cores) |
+| **Wi-Fi** | Adaptateur USB Realtek RTL8192EU (ID: 0bda:818b) |
+| **OS** | Ubuntu Server 22.04 LTS (noyau 6.8.0-40-generic HWE) |
 
-5. **Succès final**  
-   - Pilote Mange compilé et chargé correctement.
-   - Interface `wlx001ea63024db` détectée.
-   - Scan Wi-Fi fonctionnel (réseau BravoTelecom_G27 visible).
-   - Connexion établie via netplan.
+## 📊 État d'avancement
 
-## Configuration finale
+- [x] ✅ Installation Ubuntu Server 22.04
+- [x] ✅ Configuration Wi-Fi RTL8192EU
+- [ ] 🚧 Configuration SSH sécurisée
+- [ ] ⏳ Installation pilotes NVIDIA + CUDA
+- [ ] ⏳ Configuration environnement Deep Learning (PyTorch/TensorFlow)
+- [ ] ⏳ Configuration NAS (Samba/NFS)
+- [ ] ⏳ Monitoring système
 
-### Netplan (Wi-Fi)
+## 🛜 Configuration Wi-Fi (Résolue)
+
+### Problème
+L'adaptateur RTL8192EU n'est pas supporté nativement par le pilote `rtl8xxxu` du noyau Linux.
+
+### Solution
+Utilisation du pilote [Mange RTL8192EU](https://github.com/Mange/rtl8192eu-linux-driver) via DKMS.
+
+### Étapes suivies
+
+**1. Installation des dépendances**
+```bash
+sudo apt install build-essential dkms git linux-headers-$(uname -r)
+```
+
+**2. Blacklist du pilote natif**
+```bash
+echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
+```
+
+**3. Installation du pilote Mange**
+```bash
+git clone https://github.com/Mange/rtl8192eu-linux-driver.git
+cd rtl8192eu-linux-driver
+sudo dkms add .
+sudo dkms install rtl8192eu/1.0
+```
+
+**4. Désactivation du power management**
+```bash
+echo "options rtl8192eu rtw_power_mgnt=0 rtw_enusbss=0" | sudo tee /etc/modprobe.d/rtl8192eu.conf
+```
+
+**5. Redémarrage et vérification**
+```bash
+sudo reboot
+# Après redémarrage
+ip link show  # Interface wlx001ea63024db doit apparaître
+```
+
+### Configuration Netplan
+
 Fichier : `/etc/netplan/50-cloud-init.yaml`
+
 ```yaml
 network:
   version: 2
@@ -49,5 +84,56 @@ network:
       dhcp4: true
       optional: true
       access-points:
-        "B********_G**":
-          password: "**********"
+        "VOTRE_SSID":
+          password: "VOTRE_MOT_DE_PASSE"
+```
+
+Application :
+```bash
+sudo netplan apply
+ping -c 4 8.8.8.8  # Test de connexion
+```
+
+### Résultat
+- ✅ Interface Wi-Fi détectée : `wlx001ea63024db`
+- ✅ Connexion stable
+- ✅ Scan des réseaux fonctionnel
+- ✅ Reconnexion automatique après reboot
+
+## 🚀 Prochaines étapes
+
+### 1. SSH sécurisé
+- Installation OpenSSH
+- Authentification par clé
+- Fail2ban pour sécurité
+
+### 2. Deep Learning
+- Installation pilotes NVIDIA (version compatible P4000)
+- Installation CUDA Toolkit
+- Installation PyTorch avec support GPU
+- Tests de performance GPU
+
+### 3. NAS
+- Configuration Samba ou NFS
+- Montage réseau
+- Backup automatique
+
+## 📚 Documentation
+
+Documentation détaillée à venir dans le dossier `docs/`
+
+## 🐛 Problèmes connus
+
+- **RAM limitée** : Seulement ~4 GB utilisables sur 12 GB installés (à investiguer)
+- **Wi-Fi après mise à jour kernel** : Nécessite recompilation du module DKMS
+
+## 🙏 Ressources
+
+- [Mange RTL8192EU Driver](https://github.com/Mange/rtl8192eu-linux-driver)
+- [Ubuntu Server Documentation](https://ubuntu.com/server/docs)
+- [NVIDIA CUDA Documentation](https://docs.nvidia.com/cuda/)
+
+---
+
+**Dernière mise à jour** : 2025-01-12  
+**Statut** : 🚧 En développement actif
