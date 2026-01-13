@@ -1,0 +1,19 @@
+# Configuration Wi-Fi pour adaptateur Realtek RTL8192EU
+# Fichier : /etc/netplan/50-cloud-init.yaml
+#
+# Installation :
+# 1. Copier ce fichier vers /etc/netplan/50-cloud-init.yaml
+# 2. Remplacer VOTRE_SSID et VOTRE_MOT_DE_PASSE
+# 3. Remplacer wlx001ea63024db par votre interface (voir avec : ip link show)
+# 4. Appliquer avec : sudo netplan apply
+
+network:
+  version: 2
+  renderer: networkd
+  wifis:
+    wlx001ea63024db:  # Votre interface Wi-Fi (peut varier selon MAC address)
+      dhcp4: true
+      optional: true
+      access-points:
+        "VOTRE_SSID":
+          password: "VOTRE_MOT_DE_PASSE"
