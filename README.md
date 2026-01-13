@@ -120,7 +120,18 @@ ping -c 4 8.8.8.8  # Test de connexion
 
 ## 📚 Documentation
 
-Documentation détaillée à venir dans le dossier `docs/`
+- [Guide Wi-Fi RTL8192EU](docs/wifi-rtl8192eu.md) - Configuration complète de l'adaptateur Wi-Fi
+
+### Fichiers de configuration
+
+- [Netplan Wi-Fi + Ethernet](config/netplan/50-cloud-init.yaml.example)
+- [Blacklist rtl8xxxu](config/modprobe.d/rtl8xxxu.conf)
+- [Options RTL8192EU](config/modprobe.d/rtl8192eu.conf)
+```
+
+4. **Message de commit :**
+```
+docs: ajout lien vers guide Wi-Fi dans README
 
 ## 🐛 Problèmes connus
 
