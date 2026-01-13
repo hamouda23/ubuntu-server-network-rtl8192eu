@@ -200,19 +200,8 @@ Avant de déconnecter écran/clavier :
 - [ ] Testé un reboot et reconnexion SSH
 - [ ] Fail2ban installé (optionnel)
 
-## 🚀 Prochaines étapes
 
-Une fois SSH configuré :
-- Accès distant 24/7
-- Installation des pilotes NVIDIA à distance
-- Configuration Deep Learning
-- Setup NAS
 
----
 
-**Dernière mise à jour** : 2025-01-12
-```
 
-4. **Message de commit :**
-```
-docs: guide configuration SSH sécurisée
+
