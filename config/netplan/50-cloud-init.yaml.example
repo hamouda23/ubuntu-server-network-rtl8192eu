@@ -1,15 +1,19 @@
-# Configuration Wi-Fi pour adaptateur Realtek RTL8192EU
+# Configuration réseau pour HP Z800
 # Fichier : /etc/netplan/50-cloud-init.yaml
 #
 # Installation :
 # 1. Copier ce fichier vers /etc/netplan/50-cloud-init.yaml
 # 2. Remplacer VOTRE_SSID et VOTRE_MOT_DE_PASSE
-# 3. Remplacer wlx001ea63024db par votre interface (voir avec : ip link show)
+# 3. Adapter les noms d'interfaces si nécessaire (voir avec : ip link show)
 # 4. Appliquer avec : sudo netplan apply
 
 network:
   version: 2
   renderer: networkd
+  ethernets:
+    enp1s0:
+      dhcp4: true
+      optional: true
   wifis:
     wlx001ea63024db:  # Votre interface Wi-Fi (peut varier selon MAC address)
       dhcp4: true
