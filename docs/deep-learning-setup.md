@@ -125,8 +125,8 @@ sudo apt update
 ### 3. Installer CUDA
 
 ```bash
-# Installer CUDA Toolkit (version 12.2)
-sudo apt install cuda-toolkit-12-2
+# Installer CUDA Toolkit (version 13.0)
+sudo apt install cuda-toolkit-13-0
 
 # Ou pour la dernière version disponible
 sudo apt install cuda-toolkit
