@@ -127,7 +127,7 @@ ping -c 4 8.8.8.8  # Test de connexion
 - [Netplan Wi-Fi + Ethernet](config/netplan/50-cloud-init.yaml.example)
 - [Blacklist rtl8xxxu](config/modprobe.d/rtl8xxxu.conf)
 - [Options RTL8192EU](config/modprobe.d/rtl8192eu.conf)
-```
+  
 - [Guide Wi-Fi RTL8192EU](docs/wifi-rtl8192eu.md) - Configuration complète de l'adaptateur Wi-Fi
 - [Guide SSH sécurisé](docs/ssh-setup.md) - Accès distant et sécurisation
 
@@ -137,7 +137,7 @@ ping -c 4 8.8.8.8  # Test de connexion
 - [Blacklist rtl8xxxu](config/modprobe.d/rtl8xxxu.conf)
 - [Options RTL8192EU](config/modprobe.d/rtl8192eu.conf)
 4. **Message de commit :**
-```
+
 - [Guide Deep Learning NVIDIA/CUDA](docs/deep-learning-setup.md) - Configuration GPU pour Deep Learning
 docs: ajout lien vers guide Wi-Fi dans README
 
