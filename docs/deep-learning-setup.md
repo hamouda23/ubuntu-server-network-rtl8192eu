@@ -189,17 +189,51 @@ Résultat attendu affiche les détails de votre GPU ✅
 sudo apt install python3 python3-pip python3-venv -y
 ```
 
-### 2. Créer un environnement virtuel
+## 🐍 Configuration Python avec Conda
 
+### 1. Installer Miniconda
 ```bash
-# Créer l'environnement
-python3 -m venv ~/ml-env
+# Télécharger Miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-# Activer l'environnement
-source ~/ml-env/bin/activate
+# Installer
+bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
-Votre prompt devrait changer : `(ml-env) samir@ai:~$`
+Pendant l'installation :
+- Appuyez sur `Enter` pour lire la licence
+- Tapez `yes` pour accepter
+- `Enter` pour l'emplacement par défaut
+- `yes` pour initialiser conda
+```bash
+# Recharger le terminal
+source ~/.bashrc
+
+# Vérifier
+conda --version
+python --version
+```
+
+### 2. Créer un environnement conda
+```bash
+# Créer environnement Deep Learning avec Python 3.10
+conda create -n ml python=3.10 -y
+
+# Activer l'environnement
+conda activate ml
+```
+
+Votre prompt devrait changer : `(ml) samir@ai:~$`
+
+### 3. Mettre à jour conda
+```bash
+conda update conda -y
+```
+```
+
+**Message de commit :**
+```
+docs: utilisation conda au lieu de venv pour Deep Learning
 
 ### 3. Mettre à jour pip
 
