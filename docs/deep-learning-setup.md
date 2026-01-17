@@ -550,4 +550,4 @@ print("✅ Transfer Learning prêt!")
 ---
 
 **Dernière mise à jour** : 2025-01-17  
-**Configuration testée** : NVIDIA Quadro P4000 + CUDA 12.2 + PyTorch 2.x
+**Configuration testée** : NVIDIA Quadro P4000 + CUDA 13.0 + PyTorch 2.x
