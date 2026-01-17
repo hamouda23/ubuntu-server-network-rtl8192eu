@@ -181,13 +181,7 @@ sudo make
 
 Résultat attendu affiche les détails de votre GPU ✅
 
-## 🐍 Configuration Python et environnement virtuel
-
-### 1. Installer Python et pip
-
-```bash
-sudo apt install python3 python3-pip python3-venv -y
-```
+docs: utilisation conda au lieu de venv pour Deep Learning
 
 ## 🐍 Configuration Python avec Conda
 
@@ -233,13 +227,7 @@ conda update conda -y
 
 **Message de commit :**
 ```
-docs: utilisation conda au lieu de venv pour Deep Learning
 
-### 3. Mettre à jour pip
-
-```bash
-pip install --upgrade pip
-```
 
 ## 🔥 Installation PyTorch avec CUDA
 
@@ -247,10 +235,10 @@ pip install --upgrade pip
 
 Allez sur https://pytorch.org/get-started/locally/
 
-Pour **CUDA 12.1** (compatible avec 12.2) :
+Installer PyTorch avec CUDA 12.1 (compatible avec votre CUDA 13.0) :
 
 ```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
 ```
 
 Pour **CUDA 11.8** (si pilote plus ancien) :
