@@ -361,8 +361,17 @@ pip install transformers
 # OpenCV (vision)
 pip install opencv-python
 ```
+```bash
+# Activer l'environnement
+conda activate ml
 
+# Installer les bibliothèques de base (conda les gère mieux)
+conda install numpy pandas matplotlib seaborn scikit-learn jupyter -y
+
+# Pour les autres, utilisez pip (car pas toujours à jour dans conda)
+pip install tensorboard transformers opencv-python
 ### Pour TensorFlow (alternative à PyTorch)
+```
 
 ```bash
 # TensorFlow avec GPU
