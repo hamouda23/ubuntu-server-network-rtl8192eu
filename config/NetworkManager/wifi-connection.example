@@ -1,0 +1,20 @@
+# Configuration Wi-Fi pour NetworkManager
+# Cette connexion est créée automatiquement par nmcli
+# Pour info seulement - pas besoin de copier ce fichier
+
+# Commande pour créer la connexion :
+# sudo nmcli device wifi connect "VOTRE_SSID" password "VOTRE_MOT_DE_PASSE"
+
+# Voir les connexions enregistrées :
+# nmcli connection show
+
+# Se reconnecter :
+# nmcli connection up "NOM_DU_RESEAU"
+
+# Modifier le mot de passe :
+# nmcli connection modify "NOM_DU_RESEAU" wifi-sec.psk "NOUVEAU_MOT_DE_PASSE"
+```
+
+**Message de commit :**
+```
+config: ajout exemple NetworkManager pour Wi-Fi
