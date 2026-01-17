@@ -138,6 +138,7 @@ ping -c 4 8.8.8.8  # Test de connexion
 - [Options RTL8192EU](config/modprobe.d/rtl8192eu.conf)
 4. **Message de commit :**
 ```
+- [Guide Deep Learning NVIDIA/CUDA](docs/deep-learning-setup.md) - Configuration GPU pour Deep Learning
 docs: ajout lien vers guide Wi-Fi dans README
 
 ## 🐛 Problèmes connus
