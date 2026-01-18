@@ -124,6 +124,7 @@ ping -c 4 8.8.8.8  # Test de connexion
 
 ### Fichiers de configuration
 
+- [Guide technique détaillé GPU et termes Deep Learning](docs/gpu-technical-guide.md)
 - [Netplan Wi-Fi + Ethernet](config/netplan/50-cloud-init.yaml.example)
 - [Blacklist rtl8xxxu](config/modprobe.d/rtl8xxxu.conf)
 - [Options RTL8192EU](config/modprobe.d/rtl8192eu.conf)
