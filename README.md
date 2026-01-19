@@ -135,7 +135,8 @@ ping -c 4 8.8.8.8  # Test de connexion
 - [Blacklist rtl8xxxu](config/modprobe.d/rtl8xxxu.conf)
 - [Options RTL8192EU](config/modprobe.d/rtl8192eu.conf)
 - [Guide Deep Learning NVIDIA/CUDA](docs/deep-learning-setup.md) - Configuration GPU pour Deep Learning
--  [Benchmark GPU](docs/gpu-benchmark.md) - Résultats de performance Quadro P4000
+- [Benchmark GPU](docs/gpu-benchmark.md) - Résultats de performance Quadro P4000
+- [Configuration stockage](docs/storage-setup.md)
 
 
 ## 🐛 Problèmes connus
