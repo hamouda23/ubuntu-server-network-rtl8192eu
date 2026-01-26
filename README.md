@@ -8,7 +8,7 @@ Transformation d'une HP Z800 Workstation (2009) en serveur Ubuntu pour Deep Lear
 - ✅ **Wi-Fi stable** : Adaptateur USB Realtek RTL8192EU fonctionnel
 - 🚧 **Deep Learning** : Utilisation du GPU NVIDIA Quadro P4000 pour l'entraînement de modèles
 - ⏳ **NAS** : Serveur de stockage réseau
-- ⏳ **Disponibilité 24/7** : Monitoring et reconnexion automatique
+- ✅ **Disponibilité 24/7** : Monitoring et reconnexion automatique
 
 ## 🔧 Matériel
 
