@@ -25,11 +25,11 @@ Transformation d'une HP Z800 Workstation (2009) en serveur Ubuntu pour Deep Lear
 
 - [x] ✅ Installation Ubuntu Server 22.04
 - [x] ✅ Configuration Wi-Fi RTL8192EU
-- [ ] 🚧 Configuration SSH sécurisée
-- [ ] ⏳ Installation pilotes NVIDIA + CUDA
-- [ ] ⏳ Configuration environnement Deep Learning (PyTorch/TensorFlow)
-- [ ] ⏳ Configuration NAS (Samba/NFS)
-- [ ] ⏳ Monitoring système
+- [x] 🚧 Configuration SSH sécurisée
+- [x] ⏳ Installation pilotes NVIDIA + CUDA
+- [x] ⏳ Configuration environnement Deep Learning (PyTorch/TensorFlow)
+- [x] ⏳ Configuration NAS (Samba/NFS)
+- [x] ⏳ Monitoring système
 
 ## 🛜 Configuration Wi-Fi (Résolue)
 
