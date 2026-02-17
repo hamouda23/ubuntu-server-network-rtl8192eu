@@ -137,6 +137,7 @@ ping -c 4 8.8.8.8  # Test de connexion
 - [Guide Deep Learning NVIDIA/CUDA](docs/deep-learning-setup.md) - Configuration GPU pour Deep Learning
 - [Benchmark GPU](docs/gpu-benchmark.md) - Résultats de performance Quadro P4000
 - [Configuration stockage](docs/storage-setup.md)
+- [Configuration stockage Final](docs/storage-final-setup.md)
 
 
 ## 🐛 Problèmes connus
