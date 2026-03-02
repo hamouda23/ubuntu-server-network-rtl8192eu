@@ -16,7 +16,7 @@ Transformation d'une HP Z800 Workstation (2009) en serveur Ubuntu pour Deep Lear
 |-----------|---------------|
 | **Modèle** | HP Z800 Workstation (2009-2010) |
 | **CPU** | 2× Intel Xeon E5640 @ 2.67 GHz (8 cœurs, 16 threads) |
-| **RAM** | 12 GB DDR3 ECC (actuellement ~4 GB utilisables) |
+| **RAM** | 16 GB DDR3 ECC (actuellement ~4 GB utilisables) |
 | **GPU** | NVIDIA Quadro P4000 (8 GB GDDR5, 1792 CUDA cores) |
 | **Wi-Fi** | Adaptateur USB Realtek RTL8192EU (ID: 0bda:818b) |
 | **OS** | Ubuntu Server 22.04 LTS (noyau 6.8.0-40-generic HWE) |
