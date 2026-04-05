@@ -127,7 +127,6 @@ ping -c 4 8.8.8.8  # Test de connexion
 - [Guide technique détaillé GPU et termes Deep Learning](docs/gpu-technical-guide.md)
 - [Netplan Wi-Fi + Ethernet](config/netplan/50-cloud-init.yaml.example)
 - [Blacklist rtl8xxxu](config/modprobe.d/rtl8xxxu.conf)
-- [Options RTL8192EU](config/modprobe.d/rtl8192eu.conf)
 - [Guide Wi-Fi RTL8192EU](docs/wifi-rtl8192eu.md) - Configuration complète de l'adaptateur Wi-Fi
 - [Guide Wi-Fi RTL8192EU](docs/wifi-rtl8192eu.md) - Configuration avec NetworkManager
 - [Guide SSH sécurisé](docs/ssh-setup.md) - Accès distant et sécurisation
