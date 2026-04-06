@@ -37,11 +37,11 @@ Serveur Ubuntu "AI" (enp1s0: 10.130.1.226)
 
 ### Firmware utilisé
 ```
-openwrt-ar71xx-generic-dragino2-squashfs-sysupgrade.bin
+dragino-lgw--v5.4.1773647212-squashfs-sysupgrade.bin
 ```
 Téléchargement :
 ```
-http://www.dragino.com/downloads/index.php?dir=motherboards/ms14/Firmware/IoT/
+[http://www.dragino.com/downloads/index.php?dir=motherboards/ms14/Firmware/IoT/](https://www.dragino.com/downloads/index.php?dir=LoRa_Gateway/LIG16/Firmware/Release/old_release/lgw--build-v5.4.1628078462-20210804-2002/
 ```
 
 ### Procédure Mode Failsafe
