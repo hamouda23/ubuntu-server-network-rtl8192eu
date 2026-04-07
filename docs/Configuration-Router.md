@@ -80,6 +80,8 @@ ssh -oKexAlgorithms=+diffie-hellman-group14-sha1 \
     -oHostKeyAlgorithms=+ssh-rsa \
     -oMACs=+hmac-sha1 \
     root@172.31.255.254
+ssh -o KexAlgorithms=+diffie-hellman-group14-sha1 -o HostKeyAlgorithms=+ssh-rsa -o MACs=+hmac-sha1 root@10.130.1.1
+
 ```
 
 ---
