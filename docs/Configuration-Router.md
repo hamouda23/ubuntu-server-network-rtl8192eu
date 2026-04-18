@@ -9,7 +9,7 @@
 ## 1. Topologie Réseau
 
 ```
-INTERNET (IP Publique : 70.81.172.196)
+INTERNET (IP Publique : xxx.xxx.xxx.196)
     ↓ Port 51820 UDP
 Box FAI (Fizz - 192.168.0.1)
     ↓ Redirection (Port Forwarding)
