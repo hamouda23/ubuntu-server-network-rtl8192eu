@@ -120,6 +120,7 @@ ping -c 4 8.8.8.8  # Test de connexion
 
 ## 📚 Documentation
 
+- [**Accès distant via Tailscale**](docs/tailscale-acces.md) - Guide pour le binôme : se connecter au Z800 depuis n'importe où
 - [Guide Wi-Fi RTL8192EU](docs/wifi-rtl8192eu.md) - Configuration complète de l'adaptateur Wi-Fi
 - [Configuration Dragino MS14N](docs/Configuration-Router.md) - Configuration complète d'une passerelle Wi-Fi
 
